@@ -11,10 +11,10 @@ form.addEventListener("submit", (e) => {
   let isValid = true;
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const phoneRegex = /^\d{10}$/; // 10-digit    
+  const phoneRegex = /^\d{10}$/; // 10-digit
   const nameRegex = /^[a-zA-Z\s]+$/; // letters and spaces
 
-  // Name  
+  // Name
   if (nameRegex.test(name.value)) {
     name.classList.remove("error");
     name.classList.add("success");
@@ -24,7 +24,7 @@ form.addEventListener("submit", (e) => {
     isValid = false;
   }
 
-  // Email  
+  // Email
   if (emailRegex.test(email.value)) {
     email.classList.remove("error");
     email.classList.add("success");
@@ -34,7 +34,7 @@ form.addEventListener("submit", (e) => {
     isValid = false;
   }
 
-  // Phone  
+  // Phone
   if (phoneRegex.test(phone.value)) {
     phone.classList.remove("error");
     phone.classList.add("success");
@@ -63,14 +63,17 @@ form.addEventListener("submit", (e) => {
       document.querySelector("form").classList.remove("shake");
     }, 500);
 
-
-    // Mobile vibration
-    // Mobile vibration on invalid submission
+    // Mobile vibration android
     if (navigator.vibrate) {
-      navigator.vibrate([300, 100, 300]); // Vibrates in a pattern (300ms vibrate, 100ms pause, 300ms vibrate)
+      navigator.vibrate([300, 100, 300]);
     } else {
       console.log("Vibration not supported on this device.");
     }
+
+    // ios
+
+    let errorSound = new Audio("error-sound.mp3"); // Replace with your own sound file
+    errorSound.play();
     
   }
 });
