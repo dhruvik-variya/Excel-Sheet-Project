@@ -1,0 +1,125 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body and form container styling */
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    overflow: hidden;
+    animation: formFadeIn 1s ease-out;
+  }
+  
+  /* Form field styling */
+  .form-data {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  label {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  input {
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    font-size: 16px;
+  }
+  
+  input:focus {
+    border-color: #74ebd5;
+    background-color: #f9f9f9;
+    outline: none;
+  }
+  
+  /* Error and success border styles */
+  input.error {
+    border-color: red;
+  }
+  
+  input.success {
+    border-color: green;
+  }
+  
+  /* Submit Button Styling */
+  button {
+    width: 100%;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background 0.4s ease, transform 0.3s ease;
+  }
+  
+  button:hover {
+    background: linear-gradient(135deg, #acb6e5 0%, #74ebd5 100%);
+    transform: scale(1.05);
+  }
+  
+  button:active {
+    transform: scale(0.95);
+  }
+  
+  /* Shake animation for invalid submission */
+  .shake {
+    animation: shake 0.5s;
+  }
+  
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+  }
+  
+  /* Fade-in animation for the form */
+  @keyframes formFadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Responsive media query for smaller screens */
+  @media (max-width: 768px) {
+    form {
+      width: 90%;
+    }
+  
+    button {
+      font-size: 14px;
+    }
+  }
+  
