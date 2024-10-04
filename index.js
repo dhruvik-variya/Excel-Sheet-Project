@@ -54,7 +54,6 @@ form.addEventListener("submit", (e) => {
       .then((findResp) => console.log(findResp));
 
     alert("Data added successfully");
-    form.reset(); 
   }
 
   //   shake effect
@@ -66,8 +65,12 @@ form.addEventListener("submit", (e) => {
 
 
     // Mobile vibration
+    // Mobile vibration on invalid submission
     if (navigator.vibrate) {
-      navigator.vibrate(300); // Vibrates for 300ms on invalid form
+      navigator.vibrate([300, 100, 300]); // Vibrates in a pattern (300ms vibrate, 100ms pause, 300ms vibrate)
+    } else {
+      console.log("Vibration not supported on this device.");
     }
+    
   }
 });
