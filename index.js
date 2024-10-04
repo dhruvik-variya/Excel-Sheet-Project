@@ -18,10 +18,12 @@ form.addEventListener("submit", (e) => {
   if (nameRegex.test(name.value)) {
     name.classList.remove("error");
     name.classList.add("success");
+    
   } else {
     name.classList.remove("success");
     name.classList.add("error");
     isValid = false;
+    alert("invalid name");
   }
 
   // Email
@@ -32,6 +34,7 @@ form.addEventListener("submit", (e) => {
     email.classList.remove("success");
     email.classList.add("error");
     isValid = false;
+    alert("invalid email");
   }
 
   // Phone
@@ -42,6 +45,7 @@ form.addEventListener("submit", (e) => {
     phone.classList.remove("success");
     phone.classList.add("error");
     isValid = false;
+    alert("invalid phone number");
   }
 
   if (isValid) {
@@ -71,9 +75,8 @@ form.addEventListener("submit", (e) => {
     }
 
     // ios
-
     let errorSound = new Audio("error-sound.mp3"); // Replace with your own sound file
     errorSound.play();
-    
+
   }
 });
